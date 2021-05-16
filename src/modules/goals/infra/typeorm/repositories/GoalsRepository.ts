@@ -1,9 +1,9 @@
 import { getRepository, Repository } from 'typeorm';
 
 import { ICreateGoalsDTO } from '@modules/goals/dtos/ICreateGoalsDTO';
-import { IGoalsRepository } from '@modules/repositories/IGoalsRepository';
 
-import { Goals } from './entities/Goals';
+import { Goals } from '../entities/Goals';
+import { IGoalsRepository } from '@modules/goals/repositories/IGoalsRepository';
 
 export class GoalsRepository implements IGoalsRepository {
   private repository: Repository<Goals>;

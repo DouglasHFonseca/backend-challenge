@@ -1,11 +1,11 @@
 import { ICreateGoalsDTO } from '@modules/goals/dtos/ICreateGoalsDTO';
 import { Goals } from '@modules/goals/infra/typeorm/entities/Goals';
-import { IGoalsRepository } from '@modules/repositories/IGoalsRepository';
 import { AppError } from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 import { IApiProvider } from '@shared/container/providers/ApiProvider/IApiProvider';
 import { IDateProvider } from '@shared/container/providers/DateProvider/IDateProvider';
 import dayjs from 'dayjs';
+import { IGoalsRepository } from '@modules/goals/repositories/IGoalsRepository';
 
 
 @injectable()

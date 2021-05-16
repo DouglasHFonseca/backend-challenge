@@ -1,5 +1,5 @@
 import { Goals } from '@modules/goals/infra/typeorm/entities/Goals';
-import { IGoalsRepository } from '@modules/repositories/IGoalsRepository';
+import { IGoalsRepository } from '@modules/goals/repositories/IGoalsRepository';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()

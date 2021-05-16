@@ -1,5 +1,5 @@
 import { Goals } from '@modules/goals/infra/typeorm/entities/Goals';
-import { IGoalsRepository } from '@modules/repositories/IGoalsRepository';
+import { IGoalsRepository } from '@modules/goals/repositories/IGoalsRepository';
 import { IApiProvider } from '@shared/container/providers/ApiProvider/IApiProvider';
 import { IDateProvider } from '@shared/container/providers/DateProvider/IDateProvider';
 import { AppError } from '@shared/errors/AppError';
@@ -26,8 +26,6 @@ class EditGoalsUseCase {
   ) { }
   async execute({ id, local, meta }: IRequest): Promise<Goals> {
     const goal = await this.goalsRepository.findById(id);
-
-    console.log(goal);
 
     if (!goal) throw new AppError("Goal doesn't exists!");
 

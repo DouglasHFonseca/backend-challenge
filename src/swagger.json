@@ -1,0 +1,168 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Backend-Challenger Documentation",
+    "description": "This is an API Travel Goals",
+    "version": "1.0.0",
+    "contact": {
+      "email": "douglas.hfonseca@gmail.com"
+    }
+  },
+  "paths": {
+    "/goals": {
+      "post": {
+        "tags": [
+          "Goals"
+        ],
+        "summary": "Create Goals",
+        "description": "Create a new goals",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "country": {
+                    "type": "string"
+                  },
+                  "local": {
+                    "type": "string"
+                  },
+                  "meta": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "country": "Brazil",
+                  "local": "Uba",
+                  "meta": "04/2023"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Goals Already Exists"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Goals"
+        ],
+        "summary": "List all goals",
+        "description": "List all goals",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "country": {
+                        "type": "string"
+                      },
+                      "flag": {
+                        "type": "string"
+                      },
+                      "local": {
+                        "type": "string"
+                      },
+                      "meta": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/goals/edit/{id}": {
+      "patch": {
+        "tags": [
+          "Goals"
+        ],
+        "summary": "Edit goals",
+        "description": "Edit goals only meta or local",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Goal id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "country": {
+                      "type": "string"
+                    },
+                    "flag": {
+                      "type": "string"
+                    },
+                    "local": {
+                      "type": "string"
+                    },
+                    "meta": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "goals/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Goals"
+        ],
+        "summary": "Delete Goals",
+        "description": "Delete goal by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Goal id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  }
+}

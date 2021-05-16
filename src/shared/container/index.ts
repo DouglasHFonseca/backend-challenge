@@ -1,7 +1,7 @@
 import { container } from "tsyringe";
 import "@shared/container/providers";
-import { IGoalsRepository } from '@modules/repositories/IGoalsRepository';
-import { GoalsRepository } from '@modules/goals/infra/typeorm/GoalsRepository';
+import { GoalsRepository } from '@modules/goals/infra/typeorm/repositories/GoalsRepository';
+import { IGoalsRepository } from '@modules/goals/repositories/IGoalsRepository';
 
 container.registerSingleton<IGoalsRepository>(
   "GoalsRepository",
