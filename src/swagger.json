@@ -157,7 +157,7 @@
         }
       }
     },
-    "goals/delete/{id}": {
+    "/goals/delete/{id}": {
       "delete": {
         "tags": [
           "Goals"
