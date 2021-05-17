@@ -94,6 +94,27 @@
         ],
         "summary": "Edit goals",
         "description": "Edit goals only meta or local",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "local": {
+                    "type": "string"
+                  },
+                  "meta": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "local": "Uba",
+                  "meta": "04/2023"
+                }
+              }
+            }
+          }
+        },
         "parameters": [
           {
             "name": "id",
